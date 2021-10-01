@@ -1,0 +1,12 @@
+<div
+  *ngIf="userInformation | async"
+  class="card-user-container"
+  style="background-image:url('{{ (userInformation | async).picture }}')"
+>
+  <div *ngIf="$fullProfile | async" [@titleAnimation] class="title">
+    {{ (userInformation | async).title }}.
+    {{ (userInformation | async).firstName }}
+    {{ (userInformation | async).lastName }}
+    - {{ ($fullProfile | async).dateOfBirth | convertAge }}
+  </div>
+</div>

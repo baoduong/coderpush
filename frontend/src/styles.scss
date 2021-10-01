@@ -1,0 +1,10 @@
+@import "./styles/reboot";
+@import './styles/fa-scss/fontawesome.scss';
+@import './styles/fa-scss/regular.scss';
+@import './styles/fa-scss/solid.scss';
+@import './styles/fa-scss/brands.scss';
+html,
+body{
+    background-color: #2d0000;
+    font-family: 'Ephesis', cursive;
+}

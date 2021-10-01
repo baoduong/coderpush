@@ -1,0 +1,1 @@
+export type CARD_ANIMATION = 'swipeleft' | 'swiperight' | ''
