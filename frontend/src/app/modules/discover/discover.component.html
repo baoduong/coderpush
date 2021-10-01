@@ -1,6 +1,12 @@
 <div class="discover-card">
   <div class="card-container">
-    <div *ngIf="($listUser | async) && $index.value <= $listUser.value.length" class="box-shadow">
+    <div
+      *ngIf="
+        ($listUser | async) && $index.value <= $listUser.value.length;
+        else tplNoMore
+      "
+      class="box-shadow"
+    >
       <div
         class="card user-above"
         [@cardAnimator]="animationState"
@@ -20,12 +26,29 @@
       </div>
     </div>
   </div>
-  <div class="button-container">
-    <button [disabled]="$waitFetchFullProfile | async" class="btn btn-like" (click)="like()">
+  <div
+    *ngIf="($listUser | async) && $index.value <= $listUser.value.length"
+    class="button-container"
+  >
+    <button
+      [disabled]="$waitFetchFullProfile | async"
+      class="btn btn-like"
+      (click)="like()"
+    >
       <i class="fas fa-heart"></i>
     </button>
-    <button [disabled]="$waitFetchFullProfile | async" class="btn btn-skip" (click)="skip()">
+    <button
+      [disabled]="$waitFetchFullProfile | async"
+      class="btn btn-skip"
+      (click)="skip()"
+    >
       <i class="fas fa-times"></i>
     </button>
   </div>
 </div>
+
+<ng-template #tplNoMore>
+  <h2 style="text-align: center;">
+    Oops! Nobody to show
+  </h2>
+</ng-template>

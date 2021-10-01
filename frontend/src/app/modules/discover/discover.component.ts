@@ -108,7 +108,7 @@ export class DiscoverComponent implements OnInit {
     this.$fullProfileAbove.next(undefined);
     this.startAnimation('swiperight');
   }
-
+  
   like() {
     if (this.isAnimation) return;
     this.interact.like(this.$fullProfileAbove.value as FullProfileModel);
