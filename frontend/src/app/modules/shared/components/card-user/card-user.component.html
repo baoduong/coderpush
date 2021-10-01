@@ -1,0 +1,7 @@
+<div class="card" *ngIf="user">
+  <img class="img" src="{{ user.picture }}" />
+  <div>
+    <div class="title">{{ user.firstName }} {{ user.lastName }}</div>
+    <div class="location">{{ user.location.city }} - {{user.dateOfBirth | convertAge}}</div>
+  </div>
+</div>

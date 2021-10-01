@@ -1,0 +1,30 @@
+@import "variables";
+.card-user-container {
+  background: $bgCardUser;
+  height: 100%;
+  position: relative;
+  border-radius: $borderRadius;
+  border: 1px solid $borderColorCard;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img {
+  height: 100%;
+  object-fit: fill;
+}
+.title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(255 255 255 / 62%);
+  padding: 10px;
+  font-size: $fontSizeBase;
+  color: $colorTitleCardUser;
+  text-shadow: 1px 1px 2px white;
+}

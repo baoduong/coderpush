@@ -1,0 +1,31 @@
+<div class="discover-card">
+  <div class="card-container">
+    <div *ngIf="($listUser | async) && $index.value <= $listUser.value.length" class="box-shadow">
+      <div
+        class="card user-above"
+        [@cardAnimator]="animationState"
+        (@cardAnimator.done)="resetAnimationState($event)"
+      >
+        <app-card-discover-user
+          [userInformation]="$userAbove"
+          [$fullProfile]="$fullProfileAbove"
+        ></app-card-discover-user>
+      </div>
+
+      <div class="card user-below">
+        <app-card-discover-user
+          [$fullProfile]="$fullProfileBelow"
+          [userInformation]="$userBelow"
+        ></app-card-discover-user>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button [disabled]="$waitFetchFullProfile | async" class="btn btn-like" (click)="like()">
+      <i class="fas fa-heart"></i>
+    </button>
+    <button [disabled]="$waitFetchFullProfile | async" class="btn btn-skip" (click)="skip()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</div>
