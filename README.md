@@ -1,4 +1,5 @@
 # Clone Tinder App
-JS Fullstack Challenge
-Frontend: Use Angular v12
+*JS Fullstack Challenge*
+
+Frontend: Angular v12
 Backend: TBD
