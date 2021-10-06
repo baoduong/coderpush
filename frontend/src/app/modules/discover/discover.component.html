@@ -11,6 +11,8 @@
         class="card user-above"
         [@cardAnimator]="animationState"
         (@cardAnimator.done)="resetAnimationState($event)"
+        (swipeleft)='like()' 
+        (swiperight)='skip()'
       >
         <app-card-discover-user
           [userInformation]="$userAbove"

@@ -1,13 +1,13 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpHeaderInterceptor } from './interceptors/http.interceptors';
-import { SharedModule } from './modules/shared/shared.module';
-import { DiscoverService } from './services/discover.service';
-import { InteractionService } from './services/interaction.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { BrowserModule, HammerModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { HttpHeaderInterceptor } from "./interceptors/http.interceptors";
+import { SharedModule } from "./modules/shared/shared.module";
+import { DiscoverService } from "./services/discover.service";
+import { InteractionService } from "./services/interaction.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +16,7 @@ import { InteractionService } from './services/interaction.service';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    HammerModule,
     SharedModule,
   ],
   providers: [
@@ -25,7 +26,7 @@ import { InteractionService } from './services/interaction.service';
       multi: true,
     },
     DiscoverService,
-    InteractionService
+    InteractionService,
   ],
   bootstrap: [AppComponent],
 })
